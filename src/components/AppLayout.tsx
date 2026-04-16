@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Calendar, Building2, BarChart3, Menu, X, Pill, Home, Settings, Star } from 'lucide-react';
+import { Calendar, Building2, BarChart3, Menu, X, Home, Settings, Star } from 'lucide-react';
 import { LOGO_BASE64 } from '@/data/logoBase64';
 
 type Page = 'today' | 'schedule' | 'companies' | 'ratings' | 'reports' | 'settings';

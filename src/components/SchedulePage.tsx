@@ -54,7 +54,6 @@ export default function SchedulePage() {
         </div>
       </div>
 
-
       <div className="bg-card rounded-xl border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">

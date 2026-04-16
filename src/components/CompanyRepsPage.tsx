@@ -3,7 +3,6 @@ import { DayOfWeek, Shift } from '@/types/pharmacy';
 import { getCompanyByName, recordVisit, getVisitPrintCount } from '@/store/pharmacyStore';
 import { ArrowRight, Printer, CheckCircle, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 import { LOGO_BASE64 } from '@/data/logoBase64';
 
 interface Props {
@@ -33,7 +32,6 @@ function generateBarcode(data: string): string {
 }
 
 export default function CompanyRepsPage({ companyName, day, shift, weekNumber, selectedDate, onBack }: Props) {
-  
   const company = getCompanyByName(companyName);
   const todayISO = selectedDate.toISOString().split('T')[0];
   const [printingRepId, setPrintingRepId] = useState<string | null>(null);
@@ -142,7 +140,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
         </div>
       )}
 
-      {/* Print permit card - receipt style matching the reference image */}
       {printingRepId && company && (() => {
         const rep = company.representatives.find(r => r.id === printingRepId);
         if (!rep) return null;
@@ -161,7 +158,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
               alignItems: 'center',
               background: '#fff',
             }}>
-              {/* Logo in circle with border */}
               <div style={{ textAlign: 'center', marginBottom: '1.5mm' }}>
                 <div style={{
                   width: '20mm',
@@ -182,7 +178,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
                 </div>
               </div>
 
-              {/* Hospital Name - bordered box */}
               <div style={{
                 textAlign: 'center',
                 width: '100%',
@@ -194,7 +189,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
                 <p style={{ fontSize: '9px', fontWeight: 700, color: '#333', margin: '1px 0 0' }}>تصريح زيارة مندوب أدوية</p>
               </div>
 
-              {/* Company & Rep Info - bordered box */}
               <div style={{
                 width: '100%',
                 border: '2px solid #1a3a5c',
@@ -207,7 +201,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
                 <p style={{ fontSize: '9px', fontWeight: 900, color: '#1a3a5c', margin: 0 }}>المندوب: {rep.name}</p>
               </div>
 
-              {/* Date & Shift Details */}
               <div style={{
                 width: '100%',
                 padding: '1mm 2mm',
@@ -227,7 +220,6 @@ export default function CompanyRepsPage({ companyName, day, shift, weekNumber, s
                 </div>
               </div>
 
-              {/* Barcode */}
               <div style={{
                 textAlign: 'center',
                 borderTop: '1px dashed #999',

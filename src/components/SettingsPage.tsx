@@ -7,7 +7,7 @@ import {
   getTelegramConfig, saveTelegramConfig, testTelegramConnection, 
   syncToTelegram, restoreFromTelegram 
 } from '@/store/pharmacyStore';
-import { Download, Upload, Send, CheckCircle, XCircle, Loader2, MessageCircle, RefreshCw } from 'lucide-react';
+import { Download, Upload, Send, CheckCircle, Loader2, MessageCircle, RefreshCw } from 'lucide-react';
 
 export default function SettingsPage() {
   const { toast } = useToast();
@@ -95,7 +95,6 @@ export default function SettingsPage() {
 
   return (
     <div className="space-y-6 animate-fade-in max-w-xl mx-auto">
-      {/* Backup Section */}
       <div className="bg-card border rounded-xl p-5 space-y-4">
         <h3 className="font-black text-base text-foreground">النسخ الاحتياطي</h3>
         <div className="flex gap-3">
@@ -111,7 +110,6 @@ export default function SettingsPage() {
         <input ref={fileInputRef} type="file" accept=".json" onChange={handleFileChange} className="hidden" />
       </div>
 
-      {/* Telegram Section */}
       <div className="bg-card border rounded-xl p-5 space-y-4">
         <div className="flex items-center gap-2">
           <MessageCircle className="w-5 h-5 text-primary" />

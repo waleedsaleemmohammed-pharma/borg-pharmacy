@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Company, CompanyRating } from '@/types/pharmacy';
 import { getCompanies, updateCompanyRating } from '@/store/pharmacyStore';
-import { Search, Save, Pencil, Star } from 'lucide-react';
+import { Search, Save, Pencil } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const RATING_LABELS: Record<CompanyRating, { label: string; desc: string; color: string }> = {
@@ -46,7 +46,6 @@ export default function CompanyRatingPage() {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
         {(['A', 'B', 'C'] as CompanyRating[]).map(r => (
           <div key={r} className={`rounded-xl border p-3 ${RATING_LABELS[r].color}`}>
@@ -56,7 +55,6 @@ export default function CompanyRatingPage() {
         ))}
       </div>
 
-      {/* Actions */}
       <div className="flex gap-2">
         <Button onClick={handleSave} className="gap-2 font-black">
           <Save className="w-4 h-4" />
@@ -68,7 +66,6 @@ export default function CompanyRatingPage() {
         </Button>
       </div>
 
-      {/* Search */}
       <div className="relative">
         <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         <Input
@@ -79,7 +76,6 @@ export default function CompanyRatingPage() {
         />
       </div>
 
-      {/* Company list */}
       <div className="space-y-2">
         {filtered.map(company => {
           const rating = ratings[company.id] || 'B';
