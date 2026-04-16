@@ -297,6 +297,7 @@ export function seedInitialData() {
   const companies: Company[] = names.map(name => ({
     id: generateId(),
     name,
+    rating: COMPANY_RATINGS[name] || 'B',
     representatives: [],
     createdAt: new Date().toISOString(),
   }));
