@@ -1,5 +1,5 @@
 import { Company, CompanyRating, Representative, Visit, DayOfWeek, Shift, DAYS, SHIFTS } from '@/types/pharmacy';
-import { WEEK1_SCHEDULE, WEEK2_SCHEDULE, WEEK3_SCHEDULE, WEEK4_SCHEDULE, ScheduleGroup } from '@/data/fixedSchedule';
+import { WEEK1_SCHEDULE, WEEK2_SCHEDULE, WEEK3_SCHEDULE, WEEK4_SCHEDULE, ScheduleGroup, COMPANY_RATINGS } from '@/data/fixedSchedule';
 
 const STORAGE_KEYS = {
   companies: 'pharmacy_companies',
